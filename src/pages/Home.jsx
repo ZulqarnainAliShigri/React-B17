@@ -413,7 +413,6 @@ const Home = () => {
       images: [
         "https://images.unsplash.com/photo-1431274172761-fca41d930114",
         "https://images.unsplash.com/photo-1499856871958-5b9627545d1a",
-        "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f",
       ],
       price: 1099,
       description:
