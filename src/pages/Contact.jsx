@@ -107,21 +107,21 @@ const Contact = () => {
       role: "CEO & Founder",
       bio: "Visionary leader with 15+ years in the industry.",
       image:
-        "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+        "https://c8.alamy.com/comp/BBHX6H/pokhara-nepal-senior-at-an-aged-shelter-BBHX6H.jpg",
     },
     {
       name: "Sarah Williams",
       role: "Customer Success",
       bio: "Dedicated to ensuring your complete satisfaction.",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+        "https://static01.nyt.com/athletic/uploads/wp/2024/09/12083008/0910_AlexMorgan.png?width=1200&height=1200&fit=cover",
     },
     {
       name: "Michael Chen",
       role: "Technical Support",
       bio: "Expert problem solver for all technical queries.",
       image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+        "https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg",
     },
   ];
 
@@ -479,7 +479,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="overflow-hidden transition-all bg-white shadow-md rounded-xl hover:shadow-lg"
+                className="overflow-hidden transition-all duration-500 bg-white shadow-md rounded-xl hover:shadow-lg hover:-translate-y-1"
               >
                 <img
                   src={member.image}
@@ -552,3 +552,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
