@@ -179,7 +179,8 @@ const Home = () => {
     {
       id: 2,
       title: "European Adventure",
-      image: "https://images.unsplash.com/photo-1493707553966-283afac8c358",
+      image:
+        "https://www.intrepidtravel.com/adventures/wp-content/uploads/2021/12/Intrepid-Travel-switzerland_alps_hiking-mountain-landscape.jpg",
       destination: "Paris, Rome, Barcelona",
       dates: "Jun 5-15, 2024",
       travelers: 2,
@@ -413,6 +414,7 @@ const Home = () => {
       images: [
         "https://images.unsplash.com/photo-1431274172761-fca41d930114",
         "https://images.unsplash.com/photo-1499856871958-5b9627545d1a",
+        "https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f",
       ],
       price: 1099,
       description:
@@ -1625,56 +1627,59 @@ const Home = () => {
       >
         <div className="container z-10 px-4 mx-auto mt-16">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="mb-4 text-5xl font-bold text-white">
+            <h1 className="mt-1 mb-4 text-5xl font-bold text-white sm:mt-0">
               Discover Your Perfect Journey
             </h1>
-            <p className="mb-8 text-xl text-gray-200">
+
+            <p className="hidden mb-8 text-xl text-gray-200 sm:block">
               Explore the world with our curated travel experiences and
               exclusive deals
             </p>
           </div>
 
           {/* Search Tabs */}
-          <div className="max-w-5xl mx-auto overflow-hidden bg-white shadow-2xl rounded-xl">
+          <div className="max-w-5xl mx-auto overflow-hidden bg-white shadow-2xl rounded-xl sm:rounded-2xl">
             <div className="flex border-b">
               <button
                 onClick={() => setActiveTab("flights")}
-                className={`flex-1 py-4 px-6 font-medium flex items-center justify-center ${
+                className={`flex-1 py-3 sm:py-4 px-2 sm:px-6 text-sm sm:text-base font-medium flex items-center justify-center ${
                   activeTab === "flights"
                     ? "text-amber-600 border-b-2 border-amber-600"
                     : "text-gray-600 hover:text-amber-500"
                 } transition-colors duration-300`}
               >
-                <FaPlane className="mr-2" /> Flights
+                <FaPlane className="mr-1 sm:mr-2" /> Flights
               </button>
               <button
                 onClick={() => setActiveTab("hotels")}
-                className={`flex-1 py-4 px-6 font-medium flex items-center justify-center ${
+                className={`flex-1 py-3 sm:py-4 px-2 sm:px-6 text-sm sm:text-base font-medium flex items-center justify-center ${
                   activeTab === "hotels"
                     ? "text-amber-600 border-b-2 border-amber-600"
                     : "text-gray-600 hover:text-amber-500"
                 } transition-colors duration-300`}
               >
-                <FaHotel className="mr-2" /> Hotels
+                <FaHotel className="mr-1 sm:mr-2" /> Hotels
               </button>
               <button
                 onClick={() => setActiveTab("packages")}
-                className={`flex-1 py-4 px-6 font-medium flex items-center justify-center ${
+                className={`flex-1 py-3 sm:py-4 px-2 sm:px-6 text-sm sm:text-base font-medium flex items-center justify-center ${
                   activeTab === "packages"
                     ? "text-amber-600 border-b-2 border-amber-600"
                     : "text-gray-600 hover:text-amber-500"
                 } transition-colors duration-300`}
               >
-                <FaUmbrellaBeach className="mr-2" /> Packages
+                <FaUmbrellaBeach className="mr-1 sm:mr-2" /> Packages
               </button>
             </div>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <form onSubmit={handleSearch}>
                 {activeTab === "flights" && (
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-4">
                     <div>
-                      <label className="block mb-2 text-gray-700">From</label>
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
+                        From
+                      </label>
                       <div className="relative">
                         <input
                           type="text"
@@ -1682,13 +1687,15 @@ const Home = () => {
                           value={searchParams.from}
                           onChange={handleInputChange}
                           placeholder="City or Airport"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                         />
-                        <FaMapMarkerAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaMapMarkerAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">To</label>
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
+                        To
+                      </label>
                       <div className="relative">
                         <input
                           type="text"
@@ -1696,13 +1703,13 @@ const Home = () => {
                           value={searchParams.to}
                           onChange={handleInputChange}
                           placeholder="City or Airport"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                         />
-                        <FaMapMarkerAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaMapMarkerAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Departure
                       </label>
                       <div className="relative">
@@ -1710,19 +1717,21 @@ const Home = () => {
                           selected={searchParams.dates}
                           onChange={(date) => handleDateChange(date, "dates")}
                           placeholderText="Select Date"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                           minDate={new Date()}
                         />
-                        <FaCalendarAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaCalendarAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">Class</label>
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
+                        Class
+                      </label>
                       <select
                         name="flightClass"
                         value={searchParams.flightClass}
                         onChange={handleInputChange}
-                        className="w-full p-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                        className="w-full p-2 text-sm border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                       >
                         <option value="economy">Economy</option>
                         <option value="premium">Premium Economy</option>
@@ -1734,9 +1743,9 @@ const Home = () => {
                 )}
 
                 {activeTab === "hotels" && (
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-4">
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Destination
                       </label>
                       <div className="relative">
@@ -1746,13 +1755,13 @@ const Home = () => {
                           value={searchParams.destination}
                           onChange={handleInputChange}
                           placeholder="City or Hotel"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                         />
-                        <FaMapMarkerAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaMapMarkerAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Check-in
                       </label>
                       <div className="relative">
@@ -1760,14 +1769,14 @@ const Home = () => {
                           selected={searchParams.checkIn}
                           onChange={(date) => handleDateChange(date, "checkIn")}
                           placeholderText="Select Date"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                           minDate={new Date()}
                         />
-                        <FaCalendarAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaCalendarAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Check-out
                       </label>
                       <div className="relative">
@@ -1777,7 +1786,7 @@ const Home = () => {
                             handleDateChange(date, "checkOut")
                           }
                           placeholderText="Select Date"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                           minDate={
                             searchParams.checkIn ||
                             new Date(
@@ -1785,11 +1794,11 @@ const Home = () => {
                             )
                           }
                         />
-                        <FaCalendarAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaCalendarAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Travelers
                       </label>
                       <div className="relative">
@@ -1797,7 +1806,7 @@ const Home = () => {
                           name="travelers"
                           value={searchParams.travelers}
                           onChange={handleInputChange}
-                          className="w-full p-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 text-sm border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                         >
                           {[1, 2, 3, 4, 5, 6].map((num) => (
                             <option key={num} value={num}>
@@ -1805,16 +1814,16 @@ const Home = () => {
                             </option>
                           ))}
                         </select>
-                        <FaUsers className="absolute text-gray-400 right-3 top-4" />
+                        <FaUsers className="absolute text-gray-400 right-2 sm:right-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                   </div>
                 )}
 
                 {activeTab === "packages" && (
-                  <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
+                  <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-4">
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Destination
                       </label>
                       <div className="relative">
@@ -1824,26 +1833,28 @@ const Home = () => {
                           value={searchParams.destination}
                           onChange={handleInputChange}
                           placeholder="Where to?"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                         />
-                        <FaMapMarkerAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaMapMarkerAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">Dates</label>
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
+                        Dates
+                      </label>
                       <div className="relative">
                         <DatePicker
                           selected={searchParams.dates}
                           onChange={(date) => handleDateChange(date, "dates")}
                           placeholderText="Flexible Dates"
-                          className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 pl-8 text-sm border border-gray-300 rounded-lg sm:p-3 sm:pl-10 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                           minDate={new Date()}
                         />
-                        <FaCalendarAlt className="absolute text-gray-400 left-3 top-4" />
+                        <FaCalendarAlt className="absolute text-gray-400 left-2 sm:left-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div>
-                      <label className="block mb-2 text-gray-700">
+                      <label className="block mb-1 text-sm text-gray-700 sm:mb-2 sm:text-base">
                         Travelers
                       </label>
                       <div className="relative">
@@ -1851,7 +1862,7 @@ const Home = () => {
                           name="travelers"
                           value={searchParams.travelers}
                           onChange={handleInputChange}
-                          className="w-full p-3 border border-gray-300 rounded-lg focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                          className="w-full p-2 text-sm border border-gray-300 rounded-lg sm:p-3 sm:text-base focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                         >
                           {[1, 2, 3, 4, 5, 6].map((num) => (
                             <option key={num} value={num}>
@@ -1859,18 +1870,18 @@ const Home = () => {
                             </option>
                           ))}
                         </select>
-                        <FaUsers className="absolute text-gray-400 right-3 top-4" />
+                        <FaUsers className="absolute text-gray-400 right-2 sm:right-3 top-2.5 sm:top-4" />
                       </div>
                     </div>
                     <div className="flex items-end">
                       <button
                         type="submit"
-                        className="flex items-center justify-center w-full px-6 py-3 text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600"
+                        className="flex items-center justify-center w-full px-4 py-2 text-sm text-white transition-colors duration-300 rounded-lg sm:px-6 sm:py-3 sm:text-base bg-amber-500 hover:bg-amber-600"
                       >
                         {isLoading ? (
                           <>
                             <svg
-                              className="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
+                              className="w-4 h-4 mr-2 -ml-1 text-white sm:w-5 sm:h-5 animate-spin"
                               xmlns="http://www.w3.org/2000/svg"
                               fill="none"
                               viewBox="0 0 24 24"
@@ -1893,7 +1904,8 @@ const Home = () => {
                           </>
                         ) : (
                           <>
-                            <FaSearch className="mr-2" /> Search Packages
+                            <FaSearch className="mr-1 sm:mr-2" /> Search
+                            Packages
                           </>
                         )}
                       </button>
@@ -1902,15 +1914,15 @@ const Home = () => {
                 )}
 
                 {(activeTab === "flights" || activeTab === "hotels") && (
-                  <div className="mt-4">
+                  <div className="mt-3 sm:mt-4">
                     <button
                       type="submit"
-                      className="flex items-center justify-center w-full px-6 py-3 font-semibold text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600"
+                      className="flex items-center justify-center w-full px-4 py-2 text-sm font-semibold text-white transition-colors duration-300 rounded-lg sm:px-6 sm:py-3 sm:text-base bg-amber-500 hover:bg-amber-600"
                     >
                       {isLoading ? (
                         <>
                           <svg
-                            className="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
+                            className="w-4 h-4 mr-2 -ml-1 text-white sm:w-5 sm:h-5 animate-spin"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
