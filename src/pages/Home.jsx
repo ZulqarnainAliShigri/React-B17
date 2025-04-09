@@ -1627,7 +1627,7 @@ const Home = () => {
       >
         <div className="container z-10 px-4 mx-auto mt-16">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="mt-1 mb-4 text-5xl font-bold text-white sm:mt-0">
+            <h1 className="hidden mt-1 mb-4 text-5xl font-bold text-white sm:block sm:mt-0">
               Discover Your Perfect Journey
             </h1>
 
