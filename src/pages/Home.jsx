@@ -1626,12 +1626,12 @@ const Home = () => {
         }}
       >
         <div className="container z-10 px-4 mx-auto mt-16">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto mt-[-50px] text-center">
             <h1 className="hidden mt-1 mb-4 text-5xl font-bold text-white sm:block sm:mt-0">
               Discover Your Perfect Journey
             </h1>
 
-            <p className="hidden mb-8 text-xl text-gray-200 sm:block">
+            <p className="mb-8 text-xl text-gray-200 ">
               Explore the world with our curated travel experiences and
               exclusive deals
             </p>
